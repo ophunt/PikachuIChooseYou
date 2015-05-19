@@ -1,1 +1,31 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Pikachu, I Choose You! (aka Win By Induction)</title>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<link rel="stylesheet" type="text/css" href="style.css"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
+		<script src="script.js"></script>
+	</head>
+
+	<body>
+		<!-- Shows Pikachu Values -->
+		<div id="pikas">You have 1 Pikachus, which release 1 Pikachus every second.</div>
+		
+		<!-- Starting place for images -->
+		<p id="start">
+		
+		</p>
+		
+		<!-- Footer -->
+		<div id="footer">
+			<div id="saveButton" class="footerDiv" onclick="window.save();">Save</div>
+			<div id="loadButton" class="footerDiv" onclick="window.load();">Load</div>
+			<div id="inspiration" class="footerDiv">Inspired by <a href="http://www.xkcd.com/1516" target="_blank">this xkcd</a>.</div>
+			<div id="attribution" class="footerDiv">Pikachu image from <a href="http://sfritts10.deviantart.com/art/Pikachu-on-Paint-214324643" target="_blank">sfritts10</a> on deviantart.</div>
+			<div id="deleteSaveButton" class="footerDiv" onclick="window.deleteSave();">Delete Save</div>
+		</div>
+	</body>
+</html>
