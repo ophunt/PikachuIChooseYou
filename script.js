@@ -46,7 +46,7 @@ var main = function () {
 	};
 
 	window.updateValues = function () {
-		$("#pikas").text("You have " + vars.pikas.toLocaleString() + " Pikachus, which release " + (Math.ceil((vars.pikas + 1) / (101 - vars.pikaLevel))).toLocaleString() + " Pikachus every three seconds");
+		$("#pikas").text("You have " + vars.pikas.toLocaleString() + " Pikachus, which release " + (Math.ceil((vars.pikas + 1) / (101 - vars.pikaLevel))).toLocaleString() + " Pikachus every " + ((3000 - vars.gymBadges * 250) / 1000) + " seconds");
 		$("#pikaLevel").text("Your Pikachus are level " + vars.pikaLevel);
 		$("#gymBadges").text("You have " + vars.gymBadges + " gym badges");
 		$("#afterGym").text("to fight the next gym. Your chances increase with the number of Pikachus you have and their level, but decrease with the amount of gyms you've already beat. Your chance is " + (((((Math.log(vars.pikas) / Math.log(10)) / 4) + vars.pikaLevel / 50)*100)/ (vars.gymBadges + 1)) + "%");
