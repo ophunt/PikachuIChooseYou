@@ -65,7 +65,7 @@ var main = function () {
 		if (vars.pikaLevel < 100) {
 			var response = confirm("Please confirm leveling up. You will lose all of your Pikachus, but they will level up."),
 				levelsGained = Math.floor((Math.log(vars.pikas) / Math.log(2)) / 10);
-			if (response === "Yes") {
+			if (response === true) {
 				vars.pikaLevel += levelsGained;
 				if (vars.pikaLevel > 100) {
 					vars.pikaLevel = 100;
@@ -83,7 +83,7 @@ var main = function () {
 			var response = confirm("Please confirm fighting the gym. You have a chance to lose a large number of Pikachus, but you may also beat the gym."),
 				strength = ((Math.log(vars.pikas) / Math.log(10)) / 4) + vars.pikaLevel / 50,
 				luck = Math.random();
-			if (response === "Yes") {
+			if (response === true) {
 				if ((strength / (vars.gymBadges + 1)) > luck) {
 					vars.gymBadges += 1;
 					console.log((strength / (vars.gymBadges + 1)));
