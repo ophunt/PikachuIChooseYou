@@ -22,9 +22,9 @@
 		<br>
 		
 		<!-- Prestige-y Area -->
-		<div class="button" id="fightGym" onclick="window.fightGym()">Click here</div><div class="afterButton" id="afterGym">to fight the next gym. Your chances increase with the number of Pikachus you have as well as their level, but decrease with the amount of gyms you've already beat.</div>
+		<div class="button" id="fightGym" onclick="window.fightGym();">Click here</div><div class="afterButton" id="afterGym">to fight the next gym. Your chances increase with the number of Pikachus you have as well as their level, but decrease with the amount of gyms you've already beat.</div>
 		<br>
-		<div class="button" id="levelUp" onclick="window.levelUp()">Click here</div><div class="afterButton" id="afterLevelUp">to level up your Pikachus. All of your Pikachus will fight one another until only one remains, him being the strongest of the bunch. Will give you more levels the more Pikachus you have.</div>
+		<div class="button" id="levelUp" onclick="window.levelUp();">Click here</div><div class="afterButton" id="afterLevelUp">to level up your Pikachus. All of your Pikachus will fight one another until only one remains, him being the strongest of the bunch. Will give you more levels the more Pikachus you have.</div>
 		
 		<!-- Footer -->
 		<div id="footer">
@@ -34,5 +34,17 @@
 			<div id="attribution" class="footerDiv">Pikachu image from <a href="http://sfritts10.deviantart.com/art/Pikachu-on-Paint-214324643" target="_blank">sfritts10</a> on deviantart.</div>
 			<div id="deleteSaveButton" class="footerDiv" onclick="window.deleteSave();">Delete Save</div>
 		</div>
+		
+		<!-- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-62755458-2', 'auto');
+			ga('send', 'pageview');
+		</script>
+
 	</body>
 </html>
