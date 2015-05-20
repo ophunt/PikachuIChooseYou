@@ -8,10 +8,27 @@ body {
 }
 
 .pikaPic {
-	width: 9.8%;
+	width: 4.9%;
 	/* height: 100px; */
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
+}
+
+.button {
+	background-color: gray;
+	border: 1px solid black;
+	width: 100px;
+	height: 18px;
+	text-align: center;
+	margin: 5px;
+	margin-right: 0px;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 4px;
+}
+
+.afterButton {
+	display: inline-block;
 }
 
 .footerDiv {
@@ -48,4 +65,18 @@ body {
 
 #inspiration {
 	width: 200px;
+}
+
+#pikas {
+	width: 900px;
+	float: left;
+}
+
+#pikaLevel {
+	float: right;
+	padding-right: 20px;
+}
+
+#gymBadges {
+	float: right;
 }

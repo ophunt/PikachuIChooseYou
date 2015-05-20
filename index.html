@@ -12,12 +12,19 @@
 
 	<body>
 		<!-- Shows Pikachu Values -->
-		<div id="pikas">You have 1 Pikachus, which release 1 Pikachus every second.</div>
+		<div id="pikas">You have 1 Pikachus, which release 1 Pikachus every three seconds</div>
+		<div id="gymBadges">You have 0 gym badges</div>
+		<div id="pikaLevel">Your Pikachus are level 1</div>
+		<br>
 		
 		<!-- Starting place for images -->
-		<p id="start">
+		<p id="start"></p>
+		<br>
 		
-		</p>
+		<!-- Prestige-y Area -->
+		<div class="button" id="fightGym" onclick="window.fightGym()">Click here</div><div class="afterButton">to fight the next gym. Your chances increase with the number of Pikachus you have as well as their level, but decrease with the amount of gyms you've already beat.</div>
+		<br>
+		<div class="button" id="levelUp" onclick="window.levelUp()">Click here</div><div class="afterButton">to level up your Pikachus. All of your Pikachus will fight one another until only one remains, him being the strongest of the bunch. Will give you more levels the more Pikachus you have.</div>
 		
 		<!-- Footer -->
 		<div id="footer">
