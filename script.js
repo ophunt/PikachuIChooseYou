@@ -41,7 +41,7 @@ var main = function () {
 		}
 
 		if (pikasToDraw > 0) {
-			start.append("<p class='drawExtras'>... And " + pikasToDraw + " More ...</p>");
+			start.append("<p class='drawExtras'>... And " + pikasToDraw.toLocaleString() + " More ...</p>");
 		}
 	};
 
@@ -64,7 +64,7 @@ var main = function () {
 	window.levelUp = function () {
 		if (vars.pikaLevel < 100) {
 			var response = confirm("Please confirm leveling up. You will lose all of your Pikachus, but they will level up."),
-				levelsGained = Math.floor((Math.log(vars.pikas) / Math.log(2)) / 10);
+				levelsGained = Math.floor((Math.log(vars.pikas) / Math.log(2)) / 7);
 			if (response === true) {
 				vars.pikaLevel += levelsGained;
 				if (vars.pikaLevel > 100) {
@@ -81,10 +81,10 @@ var main = function () {
 	window.fightGym = function () {
 		if (vars.gymBadges < 8) {
 			var response = confirm("Please confirm fighting the gym. You have a chance to lose a large number of Pikachus, but you may also beat the gym."),
-				strength = ((Math.log(vars.pikas) / Math.log(10)) / 4) + vars.pikaLevel / 50,
+				strength = (vars.pikas / Math.pow(100, (vars.gymBadges + 1))) * (vars.pikaLevel / 10),
 				luck = Math.random();
 			if (response === true) {
-				if ((strength / (vars.gymBadges + 1)) > luck) {
+				if (strength > luck) {
 					vars.gymBadges += 1;
 					console.log((strength / (vars.gymBadges + 1)));
 					console.log(luck);
