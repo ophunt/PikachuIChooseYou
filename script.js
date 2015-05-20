@@ -89,7 +89,7 @@ var main = function () {
 					console.log((strength / (vars.gymBadges + 1)));
 					console.log(luck);
 				} else {
-					vars.pikas *= Math.pow(0.1, (vars.gymBadges + 1));
+					vars.pikas = Math.ceil(vars.pikas * (Math.pow(0.1, (vars.gymBadges + 1))));
 					console.log((strength / (vars.gymBadges + 1)));
 					console.log(luck);
 				}
