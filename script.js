@@ -63,7 +63,7 @@ var main = function () {
 
 	window.levelUp = function () {
 		if (vars.pikaLevel < 100) {
-			var response = prompt("Please enter the word 'Yes' as written in order to confirm leveling up. You will lose all of your Pikachus, but they will level up.", "No"),
+			var response = prompt("Please enter the word 'Yes' as written in order to confirm leveling up. You will lose all of your Pikachus, but they will level up. Each level increases the effectiveness of Pikachu production.", "No"),
 				levelsGained = Math.floor((Math.log(vars.pikas) / Math.log(2)) / 10);
 			if (response === "Yes") {
 				vars.pikaLevel += levelsGained;
@@ -80,7 +80,7 @@ var main = function () {
 
 	window.fightGym = function () {
 		if (vars.gymBadges < 8) {
-			var response = prompt("Please enter the word 'Yes' as written in order to confirm fighting the gym. You have a chance to lose a large number of Pikachus, but you may also beat the gym.", "No"),
+			var response = prompt("Please enter the word 'Yes' as written in order to confirm fighting the gym. You have a chance to lose a large number of Pikachus, but you may also beat the gym. Each gym badge reduces the time it takes to create more Pikachus.", "No"),
 				strength = ((Math.log(vars.pikas) / Math.log(10)) / 4) + vars.pikaLevel / 50,
 				luck = Math.random();
 			if (response === "Yes") {
