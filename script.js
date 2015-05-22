@@ -60,7 +60,7 @@ var main = function () {
 		$("#pikaLevel").text("Your Pikachus are level " + vars.pikaLevel);
 		$("#gymBadges").text("You have " + vars.gymBadges + " gym badges");
 		$("#afterGym").text("to fight the next gym. Your chances increase with the number of Pikachus you have and their level, but decrease with the amount of gyms you've already beat. Your chance is " + window.confineNum(0, 100, ((vars.pikas / Math.pow(100, (vars.gymBadges + 1))) * (vars.pikaLevel / 10)).toFixed(3)) + "%.  Each gym badge reduces the time it takes to create more Pikachus.");
-		$("#afterLevelUp").text("to level up your Pikachus. All of your Pikachus will fight one another until only one remains, him being the strongest of the bunch. Will give you more levels the more Pikachus you have. You will gain " + window.confineNum(0, (101 - vars.pikaLevel), (Math.floor((Math.log(vars.pikas) / Math.log(10)) - 1))) + " levels. Next level at " + (Math.pow(10, Math.floor((Math.log(vars.pikas) / Math.log(10))))).toLocaleString() + " Pikachus. Each level increases the effectiveness of Pikachu production.");
+		$("#afterLevelUp").text("to level up your Pikachus. All of your Pikachus will fight one another until only one remains, him being the strongest of the bunch. Will give you more levels the more Pikachus you have. You will gain " + window.confineNum(0, (101 - vars.pikaLevel), (Math.floor((Math.log(vars.pikas) / Math.log(10)) - 1))) + " levels. Next level at " + window.confineNum(100, Math.pow(10, (101 - vars.gymBadges)), (Math.pow(10, (Math.floor((Math.log(vars.pikas) / Math.log(10)) + 1))))).toLocaleString() + " Pikachus. Each level increases the effectiveness of Pikachu production.");
 	};
 
 	window.loop = function () {
@@ -76,12 +76,16 @@ var main = function () {
 			var response = confirm("Please confirm leveling up. You will lose all of your Pikachus, but they will level up."),
 				levelsGained = Math.floor((Math.log(vars.pikas) / Math.log(10)) - 1);
 			if (response === true) {
-				vars.pikaLevel += levelsGained;
-				if (vars.pikaLevel > 100) {
-					vars.pikaLevel = 100;
+				if (vars.pikaLevel > 0) {
+					vars.pikaLevel += levelsGained;
+					if (vars.pikaLevel > 100) {
+						vars.pikaLevel = 100;
+					}
+					vars.pikas = 1;
+					window.updateValues();
+				} else {
+					alert("You will not gain any levels, in fact you may even lose some. Please do not continue.");
 				}
-				vars.pikas = 1;
-				window.updateValues();
 			}
 		} else {
 			alert("Your Pikachus are already as strong as they can get!");
