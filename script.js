@@ -76,7 +76,7 @@ var main = function () {
 			var response = confirm("Please confirm leveling up. You will lose all of your Pikachus, but they will level up."),
 				levelsGained = Math.floor((Math.log(vars.pikas) / Math.log(10)) - 1);
 			if (response === true) {
-				if (vars.pikaLevel > 0) {
+				if (levelsGained > 0) {
 					vars.pikaLevel += levelsGained;
 					if (vars.pikaLevel > 100) {
 						vars.pikaLevel = 100;
